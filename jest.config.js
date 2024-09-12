@@ -3,13 +3,13 @@ module.exports = {
   testEnvironment: 'node',
   testMatch: ['**/test/**/*.[jt]s?(x)'],
   verbose: true,
-  testTimeout: 30000,
+  testTimeout: 30000, // timeout de execução do jest
   reporters: [
     'default',
     [
       'jest-html-reporters',
       {
-        publicPath: './output',
+        publicPath: './output', 
         filename: 'report.html',
         pageTitle: 'Integration Tests with Jest and Pactum',
         logoImgPath: './assets/jest-logo.png',

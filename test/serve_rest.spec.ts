@@ -14,7 +14,7 @@ describe('ServeRest API', () => {
   const rep = SimpleReporter;
   const baseUrl = 'https://serverest.dev';
 
-  p.request.setDefaultTimeout(90000);
+  p.request.setDefaultTimeout(90000);// precisa setar pois por padrao vem 5 segundos
 
   beforeAll(async () => {
     p.reporter.add(rep);
@@ -28,8 +28,8 @@ describe('ServeRest API', () => {
         password: password,
         administrador: 'true'
       })
-      .expectStatus(StatusCodes.CREATED)
-      .expectBodyContains('Cadastro realizado com sucesso')
+      .expectStatus(StatusCodes.CREATED)//verifica se conectou 201
+      .expectBodyContains('Cadastro realizado com sucesso') 
       .returns('_id');
 
     emailUsuario = await p
@@ -198,7 +198,14 @@ describe('ServeRest API', () => {
         .expectStatus(StatusCodes.OK)
         .expectBodyContains('Registro excluído com sucesso');
     });
+
+    
   });
 
   afterAll(() => p.reporter.end());
 });
+
+
+// npm rum ci
+// doc pactumJS 
+// npm outdate ( traz biblioteca desatualizada )

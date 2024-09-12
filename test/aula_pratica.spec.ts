@@ -34,7 +34,7 @@ describe('Sistema - ServeRest', () => {
           administrador: 'true'
         })
         .expectStatus(StatusCodes.CREATED)
-        .returns('_id');
+        .returns('_id'); // só coloca return quando quer salvar a os dados da variavel 
     });
 
     it('Buscar usuário', async () => {
